@@ -1,0 +1,29 @@
+NUMBER_OF_INSTANCES = 20
+INSTANCE_PATH = None
+
+NUMBER_OF_SERVICES = 10
+NUMBER_OF_TECHNICIANS = 1 # they will each have a shift for each day of time horizon
+NUMBER_OF_DEPOTS = 1   # technician will be assigned to a single depot
+
+TIME_HORIZON = [2] # days from 1st July 2019
+START_DAY = datetime.datetime(2019, 7, 1, 0, 0, 0, 0)
+
+SHIFT_LENGTH = 8 # hours
+NUMBER_OF_SERVICES_PER_SHIFT = 8
+
+TIME_WINDOWS = [2,4,6]
+TIME_WINDOW_RISK = [0.2, 0.3, 0.5] # high probability for smaller windows indicates high risk
+
+STD_DEV_RISK = [15, 120] # range of minutes
+
+LOCATION_INPUT = r"locations.txt"
+DISTANCE_INPUT = r"distance.npz"
+DISTANCE_MATRIX_SIZE = 1000
+
+LOCATION_CHARACHTERISTIC = 'MIXED'
+
+##
+## predefined service distributions to choose from (just need to shift / scale randomly)
+##
+# point mass, exponential, erlang, multi-modal
+'SERVICE_DISTRIBUTION_DISTRIBUTION': [0.01, 0.04, 0.85, 0.1]
